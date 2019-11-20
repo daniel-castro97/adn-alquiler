@@ -11,6 +11,8 @@ import javax.persistence.Entity;
  *
  */
 import javax.persistence.Id;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
 @Entity
 public class ClienteEntity implements Serializable{
 
@@ -27,6 +29,70 @@ public class ClienteEntity implements Serializable{
 	private String nombre;
 	
 	@Column(name="fecha_nacimiento")
+	@Temporal(TemporalType.DATE)
 	private Date fechaNacimiento;
+	
+	@Column(name="telefono")
+	private Long telefono;
+	
+	@Column(name="correo")
+	private String correo;
+	
+	@Column(name="categoria_pase")
+	private String categoriaPase;
+
+	public Long getCedula() {
+		return cedula;
+	}
+
+	public void setCedula(Long cedula) {
+		this.cedula = cedula;
+	}
+
+	public String getNombre() {
+		return nombre;
+	}
+
+	public void setNombre(String nombre) {
+		this.nombre = nombre;
+	}
+
+	public Date getFechaNacimiento() {
+		return fechaNacimiento;
+	}
+
+	public void setFechaNacimiento(Date fechaNacimiento) {
+		this.fechaNacimiento = fechaNacimiento;
+	}
+
+	public Long getTelefono() {
+		return telefono;
+	}
+
+	public void setTelefono(Long telefono) {
+		this.telefono = telefono;
+	}
+
+	public String getCorreo() {
+		return correo;
+	}
+
+	public void setCorreo(String correo) {
+		this.correo = correo;
+	}
+
+	public String getCategoriaPase() {
+		return categoriaPase;
+	}
+
+	public void setCategoriaPase(String categoriaPase) {
+		this.categoriaPase = categoriaPase;
+	}
+
+	public static long getSerialversionuid() {
+		return serialVersionUID;
+	}
+	
+	
 }
 

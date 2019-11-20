@@ -15,7 +15,7 @@ import com.ceiba.alquiler.dominio.repositorio.RepositorioMoto;
  * @author daniel.castro
  *
  */
-@Component
+//@Component
 public class ServicioCrearMoto {
 	
 	

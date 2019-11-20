@@ -7,6 +7,7 @@ import java.text.ParseException;
 import org.junit.jupiter.api.Test;
 
 public class MotoTest {
+	
 	@Test
 	public void motoValidad() throws ParseException {
 		boolean resultadoPruebaMoto = false;

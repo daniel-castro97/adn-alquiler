@@ -27,7 +27,6 @@ public class Cliente {
 	 */
 	public Cliente(Long cedula, String nombre, Date fechaNacimineto, Long telefono, String correo,
 			String categoriaPase) {
-		super();
 		this.cedula = cedula;
 		this.nombre = nombre;
 		this.fechaNacimineto = fechaNacimineto;
