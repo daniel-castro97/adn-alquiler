@@ -7,7 +7,9 @@ package com.ceiba.alquiler.aplicacion.comando;
  */
 public class ComandoMoto {
 
-	
+	/*
+	 * Atributos
+	 */
 	private String placa;
 	private String marca;
 	private int modelo;
@@ -35,7 +37,9 @@ public class ComandoMoto {
 	}
 	
 	
-
+	/**
+	 * Constructor vacio
+	 */
 	public ComandoMoto() {
 		super();
 		// TODO Auto-generated constructor stub

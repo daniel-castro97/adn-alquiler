@@ -10,7 +10,7 @@ public class Cliente {
 	/*
 	 * Atributos
 	 */
-	private int cedula;
+	private Long cedula;
 	private String nombre;
 	private Date fechaNacimineto;
 	private Long telefono;
@@ -25,7 +25,7 @@ public class Cliente {
 	 * @param correo
 	 * @param categoriaPase
 	 */
-	public Cliente(int cedula, String nombre, Date fechaNacimineto, Long telefono, String correo,
+	public Cliente(Long cedula, String nombre, Date fechaNacimineto, Long telefono, String correo,
 			String categoriaPase) {
 		super();
 		this.cedula = cedula;
@@ -36,11 +36,11 @@ public class Cliente {
 		this.categoriaPase = categoriaPase;
 	}
 
-	public int getCedula() {
+	public Long getCedula() {
 		return cedula;
 	}
 
-	public void setCedula(int cedula) {
+	public void setCedula(Long cedula) {
 		this.cedula = cedula;
 	}
 
