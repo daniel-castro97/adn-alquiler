@@ -7,10 +7,10 @@ import org.springframework.stereotype.Component;
 import com.ceiba.alquiler.aplicacion.comando.ComandoMoto;
 import com.ceiba.alquiler.aplicacion.comando.fabrica.FabricaMoto;
 import com.ceiba.alquiler.dominio.entidades.Moto;
-import com.ceiba.alquiler.dominio.servicio.ServicioCrearMoto;
+import com.ceiba.alquiler.dominio.servicio.moto.ServicioCrearMoto;
 
 @Component
-public class ManejadorMoto {
+public class ManejadorCrearMoto {
 	/*
 	 * Atributos
 	 */
@@ -22,7 +22,7 @@ public class ManejadorMoto {
 	 * @param servicioCrearMoto
 	 * @param fabricaMoto
 	 */
-	public ManejadorMoto(ServicioCrearMoto servicioCrearMoto, FabricaMoto fabricaMoto) {
+	public ManejadorCrearMoto(ServicioCrearMoto servicioCrearMoto, FabricaMoto fabricaMoto) {
 		this.servicioCrearMoto = servicioCrearMoto;
 		this.fabricaMoto = fabricaMoto;
 	}
@@ -30,10 +30,6 @@ public class ManejadorMoto {
 	public void crear(ComandoMoto coomandoMoto) {
 		Moto moto = this.fabricaMoto.crearMoto(coomandoMoto);
 		this.servicioCrearMoto.crear(moto);
-	}
-	
-	public void eliminar(String placa) {
-		this.servicioCrearMoto.eliminar(placa);
 	}
 	
 	public List<ComandoMoto> listar(){

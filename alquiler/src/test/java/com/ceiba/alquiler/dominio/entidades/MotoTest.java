@@ -12,8 +12,6 @@ public class MotoTest {
 	public void motoValidad() throws ParseException {
 		boolean resultadoPruebaMoto = false;
 		Moto moto = new MotoTestDataBuilder().build();
-		
-		
 		assertEquals(160, moto.getCilindrada());
 		
 	}

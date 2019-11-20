@@ -7,9 +7,6 @@ package com.ceiba.alquiler.aplicacion.comando;
  */
 public class ComandoMoto {
 
-	/*
-	 * Atributos
-	 */
 	private String placa;
 	private String marca;
 	private int modelo;
@@ -17,17 +14,7 @@ public class ComandoMoto {
 	private int cilindrada;
 	private int precioAlquiler;
 	
-	/**
-	 * Consturctor de clase
-	 * @param placa
-	 * @param marca
-	 * @param modelo
-	 * @param referencia
-	 * @param cilindrada
-	 * @param precioAlquiler
-	 */
 	public ComandoMoto(String placa, String marca, int modelo, String referencia, int cilindrada, int precioAlquiler) {
-		super();
 		this.placa = placa;
 		this.marca = marca;
 		this.modelo = modelo;
@@ -36,17 +23,9 @@ public class ComandoMoto {
 		this.precioAlquiler = precioAlquiler;
 	}
 	
-	
-	/**
-	 * Constructor vacio
-	 */
 	public ComandoMoto() {
-		super();
-		// TODO Auto-generated constructor stub
+	
 	}
-
-
-
 	public String getPlaca() {
 		return placa;
 	}
@@ -94,8 +73,4 @@ public class ComandoMoto {
 	public void setPrecioAlquiler(int precioAlquiler) {
 		this.precioAlquiler = precioAlquiler;
 	}
-	
-	
-
-
 }

@@ -1,12 +1,9 @@
-package com.ceiba.alquiler.dominio.entidades;
+package com.ceiba.alquiler.aplicacion.comando;
 
 import java.util.Date;
-/**
- * Clase Cliente
- * @author daniel.castro
- *
- */
-public class Cliente {
+
+public class ComandoCliente {
+	
 	private Long cedula;
 	private String nombre;
 	private Date fechaNacimineto;
@@ -14,8 +11,9 @@ public class Cliente {
 	private String correo;
 	private String categoriaPase;
 	
-	public Cliente(Long cedula, String nombre, Date fechaNacimineto, Long telefono, String correo,
+	public ComandoCliente(Long cedula, String nombre, Date fechaNacimineto, Long telefono, String correo,
 			String categoriaPase) {
+		
 		this.cedula = cedula;
 		this.nombre = nombre;
 		this.fechaNacimineto = fechaNacimineto;
@@ -23,6 +21,11 @@ public class Cliente {
 		this.correo = correo;
 		this.categoriaPase = categoriaPase;
 	}
+	
+	
+	public ComandoCliente() {
+	}
+
 
 	public Long getCedula() {
 		return cedula;
@@ -71,8 +74,4 @@ public class Cliente {
 	public void setCategoriaPase(String categoriaPase) {
 		this.categoriaPase = categoriaPase;
 	}
-	
-	
-
-
 }

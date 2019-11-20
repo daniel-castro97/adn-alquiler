@@ -1,9 +1,6 @@
-package com.ceiba.alquiler.dominio.servicio;
+package com.ceiba.alquiler.dominio.servicio.moto;
 
 import java.util.List;
-
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Component;
 
 import com.ceiba.alquiler.aplicacion.comando.ComandoMoto;
 import com.ceiba.alquiler.dominio.entidades.Moto;
@@ -36,11 +33,6 @@ public class ServicioCrearMoto {
 		if(existe) {
 			throw new ExcepcionValidadorMoto("");
 		}
-	}
-	
-	
-	public void eliminar(String placa) {
-		this.repositorioMoto.eliminar(placa);
 	}
 	
 	public List<ComandoMoto> listar(){

@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.ceiba.alquiler.aplicacion.comando.ComandoMoto;
-import com.ceiba.alquiler.aplicacion.comando.manejador.moto.ManejadorMoto;
+import com.ceiba.alquiler.aplicacion.comando.manejador.moto.ManejadorCrearMoto;
 
 /**
  * 
@@ -20,9 +20,9 @@ import com.ceiba.alquiler.aplicacion.comando.manejador.moto.ManejadorMoto;
 @RestController
 @RequestMapping(value="/lista")
 public class ListaMotos {
-	private final ManejadorMoto manejadorMoto;
+	private final ManejadorCrearMoto manejadorMoto;
 	
-	public ListaMotos(ManejadorMoto manejadorMoto) {
+	public ListaMotos(ManejadorCrearMoto manejadorMoto) {
 		
 		this.manejadorMoto = manejadorMoto;
 	}
