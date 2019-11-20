@@ -2,6 +2,7 @@ package com.ceiba.alquiler.dominio.servicio;
 
 import java.util.List;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import com.ceiba.alquiler.aplicacion.comando.ComandoMoto;
@@ -16,12 +17,15 @@ import com.ceiba.alquiler.dominio.repositorio.RepositorioMoto;
  */
 @Component
 public class ServicioCrearMoto {
+	
+	
 	private RepositorioMoto repositorioMoto;
 	
-	public  ServicioCrearMoto(RepositorioMoto moto) {
-		this.repositorioMoto = moto;
-	}
 	
+	public ServicioCrearMoto(RepositorioMoto repositorioMoto) {
+		this.repositorioMoto = repositorioMoto;
+	}
+
 	public void crear(Moto moto) {
 		validarExistencia(moto);
 		this.repositorioMoto.crear(moto);

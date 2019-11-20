@@ -23,7 +23,6 @@ public class ManejadorMoto {
 	 * @param fabricaMoto
 	 */
 	public ManejadorMoto(ServicioCrearMoto servicioCrearMoto, FabricaMoto fabricaMoto) {
-	
 		this.servicioCrearMoto = servicioCrearMoto;
 		this.fabricaMoto = fabricaMoto;
 	}

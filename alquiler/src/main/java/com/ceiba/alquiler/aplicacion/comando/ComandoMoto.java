@@ -33,6 +33,15 @@ public class ComandoMoto {
 		this.cilindrada = cilindrada;
 		this.precioAlquiler = precioAlquiler;
 	}
+	
+	
+
+	public ComandoMoto() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+
+
 
 	public String getPlaca() {
 		return placa;
