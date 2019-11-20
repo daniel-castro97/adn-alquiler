@@ -60,7 +60,7 @@ pipeline{
             }
             success{
                echo 'This will run only if successfull'
-               junit 'build/test-results/test/*.xml'
+               junit 'alquiler/build/test-results/test/*.xml'
             }
             failure {
                echo 'This will run only if failed'
