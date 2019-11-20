@@ -14,7 +14,7 @@ public class ManejadorEliminarCliente {
 		this.servicioEliminarCliente = servicioEliminarCliente;
 	}
 	
-		public void eliminar(int cedula) {
+		public void eliminar(Long cedula) {
 			this.servicioEliminarCliente.elimiar(cedula);
 		}
 

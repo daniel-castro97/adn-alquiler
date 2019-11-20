@@ -11,7 +11,7 @@ import com.ceiba.alquiler.aplicacion.comando.ComandoMoto;
 import com.ceiba.alquiler.dominio.entidades.Moto;
 import com.ceiba.alquiler.dominio.repositorio.RepositorioMoto;
 import com.ceiba.alquiler.infraestructura.entidades.MotoEntity;
-import com.ceiba.alquiler.infraestructura.jpa.MotoJpa;
+import com.ceiba.alquiler.infraestructura.jpa.moto.MotoJpa;
 
 /**
  * Clase de repositorio de capa de infraestructura

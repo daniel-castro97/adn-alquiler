@@ -1,4 +1,4 @@
-package com.ceiba.alquiler.infraestructura.jpa;
+package com.ceiba.alquiler.infraestructura.jpa.moto;
 
 import java.util.List;
 

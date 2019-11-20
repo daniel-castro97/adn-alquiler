@@ -1,4 +1,4 @@
-package com.ceiba.alquiler.infraestructura.configuracion;
+package com.ceiba.alquiler.infraestructura.configuracion.moto;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

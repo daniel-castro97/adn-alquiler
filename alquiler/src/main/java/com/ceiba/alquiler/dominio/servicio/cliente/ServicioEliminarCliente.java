@@ -11,7 +11,7 @@ public class ServicioEliminarCliente {
 		this.repositorioCliente = repositorioCliente;
 	}
 	
-	public void elimiar(int cedula) {
+	public void elimiar(Long cedula) {
 		this.repositorioCliente.eliminar(cedula);
 	}
 
