@@ -27,6 +27,14 @@ public interface RepositorioMoto {
 	 * @param placa
 	 */
 	void eliminar(String placa);
+	
+	
+	/**
+	 * 
+	 * @param moto
+	 */
+	void actualizar(Moto moto);
+	
 	/**
 	 * 
 	 * @return

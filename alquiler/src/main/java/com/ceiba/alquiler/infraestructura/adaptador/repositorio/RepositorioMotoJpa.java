@@ -67,5 +67,11 @@ public class RepositorioMotoJpa implements RepositorioMoto{
 		}
 		return coomandoMoto;
 	}
+	@Override
+	public void actualizar(Moto moto) {
+		MotoEntity motoEntity = modelMapper.map(moto, MotoEntity.class);
+		motoJpa.save(motoEntity);
+		
+	}
 
 }
