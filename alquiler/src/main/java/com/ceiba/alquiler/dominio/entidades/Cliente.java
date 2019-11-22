@@ -7,6 +7,13 @@ import java.util.Date;
  *
  */
 public class Cliente {
+	
+	private static final String LA_CEDULA_ES_OBLIGATORIA ="La cedula es un campo obligatorio";
+	private static final String EL_NOMBRE_ES_OBLIGATORIO = "El nombre es un campo obligatorio";
+	private static final String LA_FECHA_ES_OBLIGATORIA = "La fecha de nacimiento es un campo obligatorio";
+	private static final String EL_CORREO_ES_UN_CAMPO_OBLIGATORIO = "El correo electronico es un campo obligatorio";
+	private static final String EL_PASE_ES_OBLIGATORIO = "La categoria del pase es un campo obligatorio";
+	
 	private Long cedula;
 	private String nombre;
 	private Date fechaNacimineto;

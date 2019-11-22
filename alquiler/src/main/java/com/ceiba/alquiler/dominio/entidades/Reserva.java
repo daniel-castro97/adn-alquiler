@@ -9,7 +9,9 @@ import java.util.Date;
  */
 public class Reserva {
 	
-
+	private static final String LA_FECHA_INICIO_ES_OBLIGATORIA ="La fecha de inicio de la reserva para el alquiler es obligatoria";
+	private static final String LA_FECHA_FIN_ES_OBLIGATORIA = "La fecha de finalización de la reserva para alquiler es obligatoria";
+	
 	/*
 	 * Atributos de Reserva
 	 */
