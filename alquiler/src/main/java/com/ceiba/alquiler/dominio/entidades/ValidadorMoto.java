@@ -1,6 +1,7 @@
 package com.ceiba.alquiler.dominio.entidades;
 
 import com.ceiba.alquiler.dominio.excepcion.ExcepcionValidadorMoto;
+import com.ceiba.alquiler.dominio.excepcion.ExcepcionValorObligatorio;
 
 /**
  * Clase para realizar validaciones a los datos que se van a insertar a un Objeto moto
@@ -33,8 +34,8 @@ public class ValidadorMoto {
 	 * @param mensaje, mensaje en caso de excepcion
 	 */
 	public static void validarObligatorio(String valor, String mensaje) {
-		if(valor.equals("")) {
-			throw new ExcepcionValidadorMoto(mensaje);
+		if(valor==null) {
+			throw new ExcepcionValorObligatorio(mensaje);
 		}
 	}
 	/**

@@ -1,7 +1,5 @@
 package com.ceiba.alquiler.dataBuilder;
 
-import java.text.ParseException;
-
 import com.ceiba.alquiler.dominio.entidades.Moto;
 
 public class MotoTestDataBuilder {
@@ -15,7 +13,7 @@ public class MotoTestDataBuilder {
 	private int cilindrada;
 	private int precioAlquiler;
 	
-	public MotoTestDataBuilder () throws ParseException{
+	public MotoTestDataBuilder (){
 		this.placa= "rhd79e";
 		this.marca = "pulsar";
 		this.anioModelo =2018;
