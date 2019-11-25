@@ -8,6 +8,8 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
@@ -39,19 +41,16 @@ public class ReservaEntity implements Serializable{
 	@Column(name="valor_total")
 	private int valorTotal;
 	
-	@Column(name="moto_placa")
-	private String  moto;
+//	@Column(name="moto_placa")
+//	private String  moto;
+//	
+//	@Column(name="cliente_id")
+//	private int cliente;
 	
-	@Column(name="cliente_id")
-	private int cliente;
-
-	public int getId() {
-		return idReserva;
-	}
-
-	public void setId(int idReserva) {
-		this.idReserva = idReserva;
-	}
+	@ManyToOne
+	@JoinColumn(name="cedula", nullable = false)
+	private ClienteEntity idCliente;
+	
 
 	public Date getFechaSolicitud() {
 		return fechaSolicitud;
@@ -85,20 +84,38 @@ public class ReservaEntity implements Serializable{
 		this.valorTotal = valorTotal;
 	}
 
-	public String getMoto() {
-		return moto;
+	public int getIdReserva() {
+		return idReserva;
 	}
 
-	public void setMoto(String moto) {
-		this.moto = moto;
+	public void setIdReserva(int idReserva) {
+		this.idReserva = idReserva;
 	}
 
-	public int getCliente() {
-		return cliente;
+	public ClienteEntity getIdCliente() {
+		return idCliente;
 	}
 
-	public void setCliente(int cliente) {
-		this.cliente = cliente;
+	public void setIdCliente(ClienteEntity idCliente) {
+		this.idCliente = idCliente;
 	}
+	
+	
+
+//	public String getMoto() {
+//		return moto;
+//	}
+//
+//	public void setMoto(String moto) {
+//		this.moto = moto;
+//	}
+//
+//	public int getCliente() {
+//		return cliente;
+//	}
+//
+//	public void setCliente(int cliente) {
+//		this.cliente = cliente;
+//	}
 
 }

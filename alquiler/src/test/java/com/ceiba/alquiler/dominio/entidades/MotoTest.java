@@ -6,6 +6,8 @@ import java.text.ParseException;
 
 import org.junit.jupiter.api.Test;
 
+import com.ceiba.alquiler.dataBuilder.MotoTestDataBuilder;
+
 public class MotoTest {
 	
 	@Test

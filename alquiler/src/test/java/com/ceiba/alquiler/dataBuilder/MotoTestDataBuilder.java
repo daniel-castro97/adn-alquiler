@@ -1,6 +1,8 @@
-package com.ceiba.alquiler.dominio.entidades;
+package com.ceiba.alquiler.dataBuilder;
 
 import java.text.ParseException;
+
+import com.ceiba.alquiler.dominio.entidades.Moto;
 
 public class MotoTestDataBuilder {
 
