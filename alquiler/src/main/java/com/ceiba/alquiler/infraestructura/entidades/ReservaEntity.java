@@ -20,9 +20,9 @@ public class ReservaEntity implements Serializable{
 	private static final long serialVersionUID = 1L;
 
 	@Id
-	@Column(name="id")
+	@Column(name="id_reserva")
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private int id;
+	private int idReserva;
 	
 	@Column(name="fecha_solicitud")
 	@Temporal(TemporalType.DATE)
@@ -46,11 +46,11 @@ public class ReservaEntity implements Serializable{
 	private int cliente;
 
 	public int getId() {
-		return id;
+		return idReserva;
 	}
 
-	public void setId(int id) {
-		this.id = id;
+	public void setId(int idReserva) {
+		this.idReserva = idReserva;
 	}
 
 	public Date getFechaSolicitud() {
