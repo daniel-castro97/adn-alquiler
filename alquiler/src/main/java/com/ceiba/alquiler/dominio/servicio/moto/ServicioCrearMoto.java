@@ -18,6 +18,8 @@ public class ServicioCrearMoto {
 	
 	private RepositorioMoto repositorioMoto;
 	
+	private static final String LA_MOTO_EXISTE = "La moto ya se encuentra registrada";
+	
 	
 	public ServicioCrearMoto(RepositorioMoto repositorioMoto) {
 		this.repositorioMoto = repositorioMoto;
@@ -31,7 +33,7 @@ public class ServicioCrearMoto {
 	private void validarExistencia(Moto moto) {
 		boolean existe = this.repositorioMoto.existe(moto);
 		if(existe) {
-			throw new ExcepcionValidadorMoto("");
+			throw new ExcepcionValidadorMoto(LA_MOTO_EXISTE);
 		}
 	}
 	
