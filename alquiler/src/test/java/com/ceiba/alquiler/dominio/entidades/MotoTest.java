@@ -29,9 +29,21 @@ public class MotoTest {
 	}
 	
 	@Test
-	public void validarCampoObligatorio() {
+	public void validarReferencia() {
 		MotoTestDataBuilder builder = new MotoTestDataBuilder();
 		builder.withReferencia(null);
 		BasePrueba.assertThrows(() -> builder.build(), ExcepcionValorObligatorio.class, "La referencia es un campo obligatorio");
+	}
+	@Test
+	public void validarCilindrada() {
+		MotoTestDataBuilder builder = new MotoTestDataBuilder();
+		builder.withCilindrada(0);
+		BasePrueba.assertThrows(() -> builder.build(), ExcepcionValidadorMoto.class, "La cilindrada es un campo obligatorio");
+	}
+	@Test
+	public void validarPrecio() {
+		MotoTestDataBuilder builder = new MotoTestDataBuilder();
+		builder.withPrecioAlquiler(0);
+		BasePrueba.assertThrows(() -> builder.build(), ExcepcionValidadorMoto.class, "El precio de alquiler es un campo obligatorio");
 	}
 }

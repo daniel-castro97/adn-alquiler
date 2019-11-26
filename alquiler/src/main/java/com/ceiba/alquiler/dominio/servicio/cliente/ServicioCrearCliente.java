@@ -1,10 +1,12 @@
 package com.ceiba.alquiler.dominio.servicio.cliente;
 
 import com.ceiba.alquiler.dominio.entidades.Cliente;
-import com.ceiba.alquiler.dominio.excepcion.ExcepcionValidadorMoto;
+import com.ceiba.alquiler.dominio.excepcion.ExcepcionClienteExiste;
 import com.ceiba.alquiler.dominio.repositorio.RepositorioCliente;
 
 public class ServicioCrearCliente {
+	
+	private static final String EL_CLIENTE_EXISTE = "El cliente ya se encuentra registrado";
 
 	private RepositorioCliente repositorioCliente;
 
@@ -20,9 +22,8 @@ public class ServicioCrearCliente {
 	
 	public void validarExistencia(Cliente cliente) {
 		boolean existe = this.repositorioCliente.existe(cliente);
-		if(existe) {
-			//CAMBIAR POR EXCPECION CLIENTE - SOLO ES UNA PRUEBA
-			throw new ExcepcionValidadorMoto("El cliente ya existe");
+		if(existe) {	
+			throw new ExcepcionClienteExiste(EL_CLIENTE_EXISTE);
 		}
 	}
 }

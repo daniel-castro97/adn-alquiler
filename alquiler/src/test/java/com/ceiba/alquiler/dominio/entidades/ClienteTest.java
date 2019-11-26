@@ -17,9 +17,30 @@ public class ClienteTest {
 	}
 	
 	@Test
-	public void validarObligatorio() {
+	public void validarCedula() {
 		ClienteTestDataBuilder builder = new ClienteTestDataBuilder();
 		builder.withCedula(null);
 		BasePrueba.assertThrows(() -> builder.build(), ExcepcionValorObligatorio.class, "La cedula es un campo obligatorio");
+	}
+	
+	@Test
+	public void validarNombre() {
+		ClienteTestDataBuilder builder = new ClienteTestDataBuilder();
+		builder.withNombre(null);
+		BasePrueba.assertThrows(() -> builder.build(), ExcepcionValorObligatorio.class, "El nombre es un campo obligatorio");
+	}
+	
+	@Test
+	public void validarFecha() {
+		ClienteTestDataBuilder builder = new ClienteTestDataBuilder();
+		builder.withFechaNacimiento(null);
+		BasePrueba.assertThrows(() -> builder.build(), ExcepcionValorObligatorio.class, "La fecha de nacimiento es un campo obligatorio");
+	}
+	
+	@Test
+	public void validarCorreo() {
+		ClienteTestDataBuilder builder = new ClienteTestDataBuilder();
+		builder.withCorreo(null);
+		BasePrueba.assertThrows(() -> builder.build(), ExcepcionValorObligatorio.class, "El correo electronico es un campo obligatorio");
 	}
 }
