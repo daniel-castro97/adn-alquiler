@@ -10,11 +10,8 @@ public class CalcularPrecio {
 		
 	}
 	
-	public static void main(String[] args) throws ParseException {
-		calcularPrecioReserva("20-06-2019", "25-06-2019", 1000);
-	}
-	
-	public static void calcularPrecioReserva(String fechaInicial, String fechaFinal, int valor) throws ParseException {
+	public static int calcularPrecioReserva(String fechaInicial, String fechaFinal, int valor, int cilindrada) throws ParseException {
+		
 		SimpleDateFormat dateFormat = new SimpleDateFormat("dd-MM-yyyy");
 		
 		Date fechaUno= dateFormat.parse(fechaInicial);
@@ -24,8 +21,10 @@ public class CalcularPrecio {
 		
 		int valorTotal = valor*cantidadDias;
 		
-		 System.err.println("Los dias son " + cantidadDias);
-		 System.err.println("El valor es " + valorTotal);
+		if(cilindrada>200) {
+			valorTotal+=50000;
+		}
+		return valorTotal;
 	}
 
 }
