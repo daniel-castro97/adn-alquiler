@@ -19,10 +19,10 @@ import com.ceiba.alquiler.aplicacion.comando.manejador.moto.ManejadorCrearMoto;
  */
 @RestController
 @RequestMapping(value="/lista")
-public class ListaMotos {
+public class MotoController {
 	private final ManejadorCrearMoto manejadorMoto;
 	
-	public ListaMotos(ManejadorCrearMoto manejadorMoto) {
+	public MotoController(ManejadorCrearMoto manejadorMoto) {
 		
 		this.manejadorMoto = manejadorMoto;
 	}

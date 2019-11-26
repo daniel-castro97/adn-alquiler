@@ -6,7 +6,9 @@ import java.util.Date;
 
 public class CalcularPrecio {
 
-	
+	private  CalcularPrecio() {
+		
+	}
 	
 	public static int calcularPrecioReserva(String fechaInicial, String fechaFinal, int valor, int cilindrada) throws ParseException {
 		
