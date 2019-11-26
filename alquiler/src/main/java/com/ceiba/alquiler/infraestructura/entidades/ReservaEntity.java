@@ -38,6 +38,7 @@ public class ReservaEntity implements Serializable{
 	@Temporal(TemporalType.DATE)
 	private Date fechaFin;
 	
+	
 	@Column(name="valor_total")
 	private int valorTotal;
 

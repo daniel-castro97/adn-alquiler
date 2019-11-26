@@ -13,7 +13,6 @@ import com.ceiba.alquiler.dominio.excepcion.ExcepcionValorObligatorio;
 
 public class MotoTest {
 	
-	private static final String PLACA = "rhd";
 	@Test
 	public void motoValidad() throws ParseException {
 		//boolean resultadoPruebaMoto = false;

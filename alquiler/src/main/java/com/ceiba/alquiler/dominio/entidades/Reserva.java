@@ -35,6 +35,10 @@ public class Reserva {
 	 */
 	public Reserva(int id, Date fechaSolicitud, Date fechaInicio, Date fechaFin, int valorTotal, Moto moto,
 			Cliente cliente) {
+		ValidadorReserva.validarObligatorio(fechaInicio, LA_FECHA_INICIO_ES_OBLIGATORIA);
+		ValidadorReserva.validarObligatorio(fechaFin, LA_FECHA_FIN_ES_OBLIGATORIA);
+		ValidadorReserva.validarObligatorio(cliente, EL_CLIENTE_ES_OBLIGATORIO);
+		ValidadorReserva.validarObligatorio(moto, LA_MOTO_ES_OBLIGATORIA);
 		this.id = id;
 		this.fechaSolicitud = fechaSolicitud;
 		this.fechaInicio = fechaInicio;

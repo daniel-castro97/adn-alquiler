@@ -14,7 +14,7 @@ public class ValidadorMoto {
 	/**
 	 * Constructor
 	 */
-	private ValidadorMoto() {
+	public ValidadorMoto() {
 	
 	}
 	/**

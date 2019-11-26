@@ -6,7 +6,7 @@ import com.ceiba.alquiler.dominio.excepcion.ExcepcionValorObligatorio;
 public class ValidadorCliente {
 	
 	
-	private  ValidadorCliente() {
+	public  ValidadorCliente() {
 		
 	}
 	

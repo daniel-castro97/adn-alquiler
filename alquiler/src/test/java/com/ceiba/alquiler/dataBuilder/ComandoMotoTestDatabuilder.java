@@ -1,7 +1,5 @@
 package com.ceiba.alquiler.dataBuilder;
 
-import java.util.Date;
-
 import com.ceiba.alquiler.aplicacion.comando.ComandoMoto;
 
 public class ComandoMotoTestDatabuilder {

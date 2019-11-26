@@ -39,6 +39,10 @@ public class Cliente {
 		this.categoriaPase = categoriaPase;
 	}
 
+	public Cliente() {
+		
+	}
+
 	public Long getCedula() {
 		return cedula;
 	}

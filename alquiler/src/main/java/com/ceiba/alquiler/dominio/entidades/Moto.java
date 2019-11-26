@@ -41,6 +41,11 @@ public class Moto {
 
 
 
+	public Moto() {
+	}
+
+
+
 	public String getPlaca() {
 		return placa;
 	}
