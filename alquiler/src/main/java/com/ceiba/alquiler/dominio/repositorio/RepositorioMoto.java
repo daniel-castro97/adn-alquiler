@@ -15,7 +15,7 @@ public interface RepositorioMoto {
 	 * 
 	 * @param Moto
 	 */
-	void crear(Moto Moto);
+	void crear(Moto moto);
 	/**
 	 * 
 	 * @param moto

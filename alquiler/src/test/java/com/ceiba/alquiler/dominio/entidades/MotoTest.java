@@ -22,7 +22,7 @@ public class MotoTest {
 	}
 	
 	@Test
-	public void validarTamanioPlaca() {
+	public void validarPlaca() {
 		MotoTestDataBuilder builder = new MotoTestDataBuilder(); 
 		builder.withPlaca("rhd");
 		BasePrueba.assertThrows(() -> builder.build(), ExcepcionValidadorMoto.class, "La placa debe tener minimo 6 caracteres");
