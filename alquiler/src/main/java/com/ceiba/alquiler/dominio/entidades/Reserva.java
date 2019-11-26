@@ -10,11 +10,11 @@ import java.util.Date;
 public class Reserva {
 	
 	private static final String LA_FECHA_INICIO_ES_OBLIGATORIA ="La fecha de inicio de la reserva para el alquiler es obligatoria";
-	private static final String LA_FECHA_FIN_ES_OBLIGATORIA = "La fecha de finalización de la reserva para alquiler es obligatoria";
+	private static final String LA_FECHA_FIN_ES_OBLIGATORIA = "La fecha de finalizacion de la reserva para alquiler es obligatoria";
+	private static final String LA_MOTO_ES_OBLIGATORIA = "La moto es obligatoria";
+	private static final String EL_CLIENTE_ES_OBLIGATORIO = "El cliente es obligatorio";
 	
-	/*
-	 * Atributos de Reserva
-	 */
+	
 	private int id;
 	private Date fechaSolicitud;
 	private Date fechaInicio;
@@ -35,7 +35,6 @@ public class Reserva {
 	 */
 	public Reserva(int id, Date fechaSolicitud, Date fechaInicio, Date fechaFin, int valorTotal, Moto moto,
 			Cliente cliente) {
-		super();
 		this.id = id;
 		this.fechaSolicitud = fechaSolicitud;
 		this.fechaInicio = fechaInicio;

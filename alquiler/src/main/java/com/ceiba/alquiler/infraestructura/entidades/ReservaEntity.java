@@ -40,17 +40,15 @@ public class ReservaEntity implements Serializable{
 	
 	@Column(name="valor_total")
 	private int valorTotal;
-	
-//	@Column(name="moto_placa")
-//	private String  moto;
-//	
-//	@Column(name="cliente_id")
-//	private int cliente;
+
 	
 	@ManyToOne
 	@JoinColumn(name="cedula", nullable = false)
 	private ClienteEntity idCliente;
 	
+	@ManyToOne
+	@JoinColumn(name="placa", nullable = false)
+	private MotoEntity idMoto;
 
 	public Date getFechaSolicitud() {
 		return fechaSolicitud;
@@ -99,23 +97,5 @@ public class ReservaEntity implements Serializable{
 	public void setIdCliente(ClienteEntity idCliente) {
 		this.idCliente = idCliente;
 	}
-	
-	
-
-//	public String getMoto() {
-//		return moto;
-//	}
-//
-//	public void setMoto(String moto) {
-//		this.moto = moto;
-//	}
-//
-//	public int getCliente() {
-//		return cliente;
-//	}
-//
-//	public void setCliente(int cliente) {
-//		this.cliente = cliente;
-//	}
 
 }
