@@ -47,12 +47,6 @@ public class RepositorioReservaJpa implements RepositorioReserva {
 	}
 
 	@Override
-	public void actualizar(Reserva reserva) {
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
 	public List<ComandoReserva> listar() {
 		List<ReservaEntity > reservaEntities = reservaJpa.findAll();
 		List<ComandoReserva> list = new ArrayList<>();

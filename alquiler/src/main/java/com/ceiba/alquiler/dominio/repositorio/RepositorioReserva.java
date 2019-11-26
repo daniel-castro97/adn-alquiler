@@ -28,11 +28,6 @@ public interface RepositorioReserva {
 	 */
 	void eliminar(int id);
 	/**
-	 * 
-	 * @param reserva
-	 */
-	void actualizar(Reserva reserva);
-	/**
 	 * Metodo para listar las reservas
 	 * @return
 	 */

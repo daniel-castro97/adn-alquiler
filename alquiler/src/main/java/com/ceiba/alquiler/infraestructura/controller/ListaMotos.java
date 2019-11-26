@@ -35,8 +35,6 @@ public class ListaMotos {
 	
 	@PostMapping(path = "/crear")
 	public void crear(@RequestBody ComandoMoto comandoMoto) {
-		System.err.print(comandoMoto.getModelo());
-		System.err.print(comandoMoto.getPrecioAlquiler());
 		this.manejadorMoto.crear(comandoMoto);
 	}
 

@@ -6,9 +6,6 @@ import com.ceiba.alquiler.dominio.excepcion.ExcepcionValorObligatorio;
 public class ValidadorCliente {
 	
 	
-	public  ValidadorCliente() {
-		
-	}
 	
 	public static void validarPase(String valor,int tamanio, String mensaje) {
 		if(valor.length()<tamanio) {

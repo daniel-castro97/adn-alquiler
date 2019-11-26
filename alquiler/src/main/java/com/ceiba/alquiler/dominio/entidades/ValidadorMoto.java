@@ -14,9 +14,7 @@ public class ValidadorMoto {
 	/**
 	 * Constructor
 	 */
-	public ValidadorMoto() {
 	
-	}
 	/**
 	 * Funcion para validar que el tamanio de una placa de una moto sea exacta
 	 * @param valor, valor de placa validar
