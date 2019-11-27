@@ -45,8 +45,8 @@ public class RepositorioMotoJpa implements RepositorioMoto{
 	}
 
 	@Override
-	public void eliminar(String placa) {
-		motoJpa.deleteByPlaca(placa);
+	public void eliminar(Moto moto) {
+		motoJpa.deleteByPlaca(moto.getPlaca());
 		
 	}
 	@Override
