@@ -1,5 +1,8 @@
 package com.ceiba.alquiler.integracion;
 
+import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
+import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
+
 import org.junit.Before;
 import org.junit.jupiter.api.Test;
 import org.junit.runner.RunWith;
@@ -10,22 +13,20 @@ import org.springframework.http.MediaType;
 import org.springframework.test.context.junit4.SpringRunner;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.setup.MockMvcBuilders;
-import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
-import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.context.WebApplicationContext;
 
 import com.ceiba.alquiler.AlquilerApplication;
-import com.ceiba.alquiler.aplicacion.comando.ComandoMoto;
-import com.ceiba.alquiler.dataBuilder.ComandoMotoTestDatabuilder;
+import com.ceiba.alquiler.aplicacion.comando.ComandoCliente;
+import com.ceiba.alquiler.dataBuilder.ComandoClienteTestDatabuilder;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest(classes = AlquilerApplication.class)
 @AutoConfigureMockMvc
 @Transactional
-public class MotoControllerTest {
-	
+public class ClienteControllerTest {
+
 	@Autowired
 	private WebApplicationContext context;
 	
@@ -40,10 +41,9 @@ public class MotoControllerTest {
 	this.mockMvc = MockMvcBuilders.webAppContextSetup(this.context).build();
 	}
 	@Test
-	public void crear() throws Exception{
-		ComandoMoto moto =  new ComandoMotoTestDatabuilder().build();
-		mockMvc.perform(post("/moto").contentType(MediaType.APPLICATION_JSON)
-				.content(objectMapper.writeValueAsString(moto))).andExpect(status().isOk());
+	public void crear() throws Exception {
+		ComandoCliente comandoCliente = new ComandoClienteTestDatabuilder().build();
+		mockMvc.perform(post("/cliente").contentType(MediaType.APPLICATION_JSON)
+				.content(objectMapper.writeValueAsString(comandoCliente))).andExpect(status().isOk());
 	}
-
 }
