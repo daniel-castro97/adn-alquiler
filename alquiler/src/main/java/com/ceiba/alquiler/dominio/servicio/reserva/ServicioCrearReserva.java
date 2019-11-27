@@ -27,8 +27,4 @@ public class ServicioCrearReserva {
 			throw new ExcepcionValidadorMoto("");
 		}
 	}
-	
-	public List<ComandoReserva> listar(){
-		return this.repositorioReserva.listar();
-	}
 }

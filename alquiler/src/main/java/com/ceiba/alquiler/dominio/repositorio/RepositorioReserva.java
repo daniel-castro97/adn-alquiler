@@ -22,11 +22,7 @@ public interface RepositorioReserva {
 	 * @return
 	 */
 	boolean existe(Reserva reserva);
-	/**
-	 * Metodo para eliminar un reserva
-	 * @param id
-	 */
-	void eliminar(int id);
+	
 	/**
 	 * Metodo para listar las reservas
 	 * @return

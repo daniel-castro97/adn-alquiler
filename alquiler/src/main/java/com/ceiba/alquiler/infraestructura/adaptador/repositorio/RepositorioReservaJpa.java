@@ -41,12 +41,6 @@ public class RepositorioReservaJpa implements RepositorioReserva {
 	}
 
 	@Override
-	public void eliminar(int id) {
-		
-		reservaJpa.deleteById(id);
-	}
-
-	@Override
 	public List<ComandoReserva> listar() {
 		List<ReservaEntity > reservaEntities = reservaJpa.findAll();
 		List<ComandoReserva> list = new ArrayList<>();

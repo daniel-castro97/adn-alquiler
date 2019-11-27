@@ -27,7 +27,7 @@ public interface RepositorioCliente {
 	 * Metodo para eliminar cliente por medio de su cedula
 	 * @param cedula, cedula a consultar para eliminar el cliente
 	 */
-	void eliminar(Long cedula);
+	void eliminar(Cliente cliente);
 	
 	/**
 	 * Metodo que retorna la lista de cliente

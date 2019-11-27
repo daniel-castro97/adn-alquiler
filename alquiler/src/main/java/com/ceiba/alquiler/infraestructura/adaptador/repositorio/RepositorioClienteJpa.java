@@ -44,8 +44,8 @@ public class RepositorioClienteJpa implements RepositorioCliente{
 	}
 
 	@Override
-	public void eliminar(Long cedula) {
-		clienteJpa.deleteByCedula(cedula);
+	public void eliminar(Cliente cliente) {
+		clienteJpa.deleteByCedula(cliente.getCedula());
 		
 	}
 
