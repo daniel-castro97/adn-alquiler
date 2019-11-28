@@ -43,7 +43,7 @@ public class ClienteControllerTest {
 	@Test
 	public void crear() throws Exception {
 		ComandoCliente comandoCliente = new ComandoClienteTestDatabuilder().build();
-		mockMvc.perform(post("/cliente").contentType(MediaType.APPLICATION_JSON)
+		mockMvc.perform(post("/service/cliente/crear").contentType(MediaType.APPLICATION_JSON)
 				.content(objectMapper.writeValueAsString(comandoCliente))).andExpect(status().isOk());
 	}
 }
