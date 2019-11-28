@@ -42,7 +42,7 @@ public class MotoControllerTest {
 	@Test
 	public void crear() throws Exception{
 		ComandoMoto moto =  new ComandoMotoTestDatabuilder().build();
-		mockMvc.perform(post("/moto").contentType(MediaType.APPLICATION_JSON)
+		mockMvc.perform(post("/service/moto/crear").contentType(MediaType.APPLICATION_JSON)
 				.content(objectMapper.writeValueAsString(moto))).andExpect(status().isOk());
 	}
 
