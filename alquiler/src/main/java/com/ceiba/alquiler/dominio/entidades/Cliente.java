@@ -1,11 +1,18 @@
 package com.ceiba.alquiler.dominio.entidades;
 
 import java.util.Date;
+
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 /**
  * Clase Cliente
  * @author daniel.castro
  *
  */
+@Getter
+@Setter
+@NoArgsConstructor
 public class Cliente {
 	
 	private static final String LA_CEDULA_ES_OBLIGATORIA ="La cedula es un campo obligatorio";
@@ -38,60 +45,5 @@ public class Cliente {
 		this.correo = correo;
 		this.categoriaPase = categoriaPase;
 	}
-
-	public Cliente() {
-		
-	}
-
-	public Long getCedula() {
-		return cedula;
-	}
-
-	public void setCedula(Long cedula) {
-		this.cedula = cedula;
-	}
-
-	public String getNombre() {
-		return nombre;
-	}
-
-	public void setNombre(String nombre) {
-		this.nombre = nombre;
-	}
-
-	public Date getFechaNacimineto() {
-		return fechaNacimineto;
-	}
-
-	public void setFechaNacimineto(Date fechaNacimineto) {
-		this.fechaNacimineto = fechaNacimineto;
-	}
-
-	public Long getTelefono() {
-		return telefono;
-	}
-
-	public void setTelefono(Long telefono) {
-		this.telefono = telefono;
-	}
-
-	public String getCorreo() {
-		return correo;
-	}
-
-	public void setCorreo(String correo) {
-		this.correo = correo;
-	}
-
-	public String getCategoriaPase() {
-		return categoriaPase;
-	}
-
-	public void setCategoriaPase(String categoriaPase) {
-		this.categoriaPase = categoriaPase;
-	}
-	
-	
-
 
 }

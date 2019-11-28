@@ -1,5 +1,12 @@
 package com.ceiba.alquiler.dominio.entidades;
 
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+
+@Getter
+@Setter
+@NoArgsConstructor
 public class Moto {
 
 	private static final int TAMANIO_EXACTO_PLACA = 6;
@@ -38,86 +45,5 @@ public class Moto {
 		this.cilindrada = cilindrada;
 		this.precioAlquiler = precioAlquiler;
 	}
-
-
-
-	public Moto() {
-	}
-
-
-
-	public String getPlaca() {
-		return placa;
-	}
-
-
-
-	public void setPlaca(String placa) {
-		this.placa = placa;
-	}
-
-
-
-	public String getMarca() {
-		return marca;
-	}
-
-
-
-	public void setMarca(String marca) {
-		this.marca = marca;
-	}
-
-
-
-	public int getAnioModelo() {
-		return anioModelo;
-	}
-
-
-
-	public void setAnioModelo(int anioModelo) {
-		this.anioModelo = anioModelo;
-	}
-
-
-
-	public String getReferencia() {
-		return referencia;
-	}
-
-
-
-	public void setReferencia(String referencia) {
-		this.referencia = referencia;
-	}
-
-
-
-	public int getCilindrada() {
-		return cilindrada;
-	}
-
-
-
-	public void setCilindrada(int cilindrada) {
-		this.cilindrada = cilindrada;
-	}
-
-
-
-	public int getPrecioAlquiler() {
-		return precioAlquiler;
-	}
-
-
-
-	public void setPrecioAlquiler(int precioAlquiler) {
-		this.precioAlquiler = precioAlquiler;
-	}
-	
-	
-
-
 
 }

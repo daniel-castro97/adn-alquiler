@@ -22,10 +22,10 @@ public class ComandoReservaTestDatabuilder{
 		this.fechaInicio = new Date();
 		this.fechaFin = new Date();
 		this.valorTotal = 50000;
-		this.cliente = new Cliente();
-		this.cliente.setCedula(1111111111L);
-		this.moto = new Moto();
-		this.moto.setPlaca("rhd79e");
+		this.cliente = new ClienteTestDataBuilder().build();
+		//this.cliente.setCedula(1111111111L);
+		this.moto = new MotoTestDataBuilder().build();
+		//this.moto.setPlaca("rhd79e");
 	}
 
 	public int getId() {

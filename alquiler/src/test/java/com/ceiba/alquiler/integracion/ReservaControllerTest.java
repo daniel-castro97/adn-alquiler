@@ -63,5 +63,10 @@ public class ReservaControllerTest {
 		mockMvc.perform(post("/service/reserva/crear").contentType(MediaType.APPLICATION_JSON)
 				.content(objectMapper.writeValueAsString(comandoReserva))).andExpect(status().isOk());
 	}
+	
+//	public void listar() throws Exception {
+//		crear();
+//		
+//	}
 
 }

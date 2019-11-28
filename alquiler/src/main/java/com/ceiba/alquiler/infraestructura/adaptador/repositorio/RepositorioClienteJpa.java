@@ -15,7 +15,7 @@ import com.ceiba.alquiler.infraestructura.jpa.cliente.ClienteJpa;
 
 @Repository
 public class RepositorioClienteJpa implements RepositorioCliente{
-	
+	//RepositorioClientePostgrest 
 	@Autowired
 	private final ClienteJpa clienteJpa;
 	
