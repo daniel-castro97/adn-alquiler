@@ -24,9 +24,7 @@ public class ReservaTestDatabuilder {
 		this.fechaFin = new Date();
 		this.valorTotal = 50000;
 		this.cliente = new ClienteTestDataBuilder().build();
-		//cliente.setCedula(12345L);
 		this.moto = new MotoTestDataBuilder().build();
-		//moto.setPlaca("abc12d");
 	}
 	
 	public ReservaTestDatabuilder withFechaSolicitud(Date fecha) {

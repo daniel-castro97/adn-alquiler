@@ -63,10 +63,13 @@ public class ReservaControllerTest {
 		mockMvc.perform(post("/service/reserva/crear").contentType(MediaType.APPLICATION_JSON)
 				.content(objectMapper.writeValueAsString(comandoReserva))).andExpect(status().isOk());
 	}
-	
-//	public void listar() throws Exception {
-//		crear();
-//		
-//	}
+	@Test
+	public void listar() throws Exception {
+		crear();
+		mockMvc.perform(get("/service/reserva/listar").contentType(MediaType.APPLICATION_JSON))
+		.andExpect(status().isOk())
+		.andExpect(jsonPath("$", hasSize(1)))
+		.andExpect(jsonPath("$[0].id", is(1)));
+	}
 
 }
