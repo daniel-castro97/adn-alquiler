@@ -4,8 +4,9 @@ import com.ceiba.alquiler.dominio.excepcion.ExcepcionValorObligatorio;
 
 public class ValidadorReserva {
 	
-	private  ValidadorReserva() {
-		throw new IllegalStateException("Utility class");
+	
+	public ValidadorReserva() {
+		
 	}
 	
 	public static void validarObligatorio(Object valor, String mensaje) {
