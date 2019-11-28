@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.ceiba.alquiler.aplicacion.comando.ComandoCliente;
 import com.ceiba.alquiler.aplicacion.comando.manejador.cliente.ManejadorCrearCliente;
-@CrossOrigin(origins = "http://localhost:4200")
+//@CrossOrigin(origins = "http://localhost:4200")
 @RestController
 @RequestMapping("/service")
 public class ClienteController {

@@ -6,7 +6,7 @@ import com.ceiba.alquiler.aplicacion.comando.ComandoReserva;
 import com.ceiba.alquiler.dominio.entidades.Cliente;
 import com.ceiba.alquiler.dominio.entidades.Moto;
 
-public class ComandoReservaTestDatabuilder {
+public class ComandoReservaTestDatabuilder{
 	
 	private int id;
 	private Date fechaSolicitud;
@@ -23,9 +23,9 @@ public class ComandoReservaTestDatabuilder {
 		this.fechaFin = new Date();
 		this.valorTotal = 50000;
 		this.cliente = new Cliente();
-		cliente.setCedula(12345L);
+		this.cliente.setCedula(1111111111L);
 		this.moto = new Moto();
-		moto.setPlaca("abc12d");
+		this.moto.setPlaca("rhd79e");
 	}
 
 	public int getId() {

@@ -17,7 +17,7 @@ public class ServicioCrearReserva {
 	}
 	
 	public void crear(Reserva reserva) {
-		validarExistencia(reserva);
+		//validarExistencia(reserva);
 		this.repositorioReserva.crear(reserva);
 	}
 	

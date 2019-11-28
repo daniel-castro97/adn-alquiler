@@ -34,7 +34,7 @@ public class RepositorioReservaJpa implements RepositorioReserva {
 
 	@Override
 	public boolean existe(Reserva reserva) {
-		List<ReservaEntity> aux;
+		List<ReservaEntity> aux = new ArrayList<>();
 		ReservaEntity reservaEntity = modelMapper.map(reserva, ReservaEntity.class);
 		aux = reservaJpa.findById(reservaEntity.getIdReserva());
 		return !aux.isEmpty();

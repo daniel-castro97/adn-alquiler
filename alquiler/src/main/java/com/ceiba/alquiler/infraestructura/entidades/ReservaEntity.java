@@ -45,11 +45,11 @@ public class ReservaEntity implements Serializable{
 	
 	@ManyToOne
 	@JoinColumn(name="cedula", nullable = false)
-	private ClienteEntity idCliente;
+	private ClienteEntity cliente;
 	
 	@ManyToOne
 	@JoinColumn(name="placa", nullable = false)
-	private MotoEntity idMoto;
+	private MotoEntity moto;
 
 	public Date getFechaSolicitud() {
 		return fechaSolicitud;
@@ -91,12 +91,20 @@ public class ReservaEntity implements Serializable{
 		this.idReserva = idReserva;
 	}
 
-	public ClienteEntity getIdCliente() {
-		return idCliente;
+	public ClienteEntity getCliente() {
+		return cliente;
 	}
 
-	public void setIdCliente(ClienteEntity idCliente) {
-		this.idCliente = idCliente;
+	public void setCliente(ClienteEntity idCliente) {
+		this.cliente = idCliente;
+	}
+
+	public MotoEntity getMoto() {
+		return moto;
+	}
+
+	public void setMoto(MotoEntity moto) {
+		this.moto = moto;
 	}
 
 }
