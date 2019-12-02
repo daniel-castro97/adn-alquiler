@@ -56,9 +56,44 @@ public class ReservaTest {
 		assertEquals(fechaEsperada, fechaResultado); 
 	}
 	@Test
-	public void validarDia() throws ParseException {
+	public void validarDiaHabilEnCero() throws ParseException {
+		Date fechaPrueba = new SimpleDateFormat("yyyy-MM-dd").parse("2019-06-20");
+		int aumentoPrueba = 0;
+		Date fechaResultado = ValidarFecha.siguienteHabil(fechaPrueba, aumentoPrueba);
+		assertEquals(fechaPrueba, fechaResultado); 
+	}
+	@Test
+	public void validarDiaMartes() throws ParseException {
 		Date fechaPrueba = new SimpleDateFormat("yyyy-MM-dd").parse("2019-12-03");
 		String diaEsperado = "Martes";
+		String diaResultado = ValidarFecha.determinarDia(fechaPrueba);
+		assertEquals(diaEsperado, diaResultado);
+	}
+	@Test
+	public void validarDiaMiercoles() throws ParseException {
+		Date fechaPrueba = new SimpleDateFormat("yyyy-MM-dd").parse("2019-12-04");
+		String diaEsperado = "Miercoles";
+		String diaResultado = ValidarFecha.determinarDia(fechaPrueba);
+		assertEquals(diaEsperado, diaResultado);
+	}
+	@Test
+	public void validarDiaJueves() throws ParseException {
+		Date fechaPrueba = new SimpleDateFormat("yyyy-MM-dd").parse("2019-12-05");
+		String diaEsperado = "Jueves";
+		String diaResultado = ValidarFecha.determinarDia(fechaPrueba);
+		assertEquals(diaEsperado, diaResultado);
+	}
+	@Test
+	public void validarDiaViernes() throws ParseException {
+		Date fechaPrueba = new SimpleDateFormat("yyyy-MM-dd").parse("2019-12-06");
+		String diaEsperado = "Viernes";
+		String diaResultado = ValidarFecha.determinarDia(fechaPrueba);
+		assertEquals(diaEsperado, diaResultado);
+	}
+	@Test
+	public void validarDiaSabado() throws ParseException {
+		Date fechaPrueba = new SimpleDateFormat("yyyy-MM-dd").parse("2019-12-07");
+		String diaEsperado = "Sabado";
 		String diaResultado = ValidarFecha.determinarDia(fechaPrueba);
 		assertEquals(diaEsperado, diaResultado);
 	}
