@@ -1,6 +1,5 @@
 package com.ceiba.alquiler.infraestructura.controller;
 
-import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -8,7 +7,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.ceiba.alquiler.aplicacion.comando.ComandoCliente;
 import com.ceiba.alquiler.aplicacion.comando.manejador.cliente.ManejadorCrearCliente;
-//@CrossOrigin(origins = "http://localhost:4200")
+
 @RestController
 @RequestMapping("/service")
 public class ClienteController {

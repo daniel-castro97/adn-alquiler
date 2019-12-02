@@ -1,5 +1,7 @@
 package com.ceiba.alquiler.aplicacion.comando.manejador.reserva;
 
+import java.text.ParseException;
+
 import org.springframework.stereotype.Component;
 
 import com.ceiba.alquiler.aplicacion.comando.ComandoReserva;
@@ -20,7 +22,7 @@ public class ManejadorCrearReserva {
 		this.fabricaReserva = fabricaReserva;
 	}
 	
-	public void crear(ComandoReserva comandoReserva) {
+	public void crear(ComandoReserva comandoReserva) throws ParseException {
 		Reserva reserva = this.fabricaReserva.crearReserva(comandoReserva);
 		this.servicioCrearReserva.crear(reserva);
 		

@@ -30,12 +30,12 @@ public class ClienteTest {
 		BasePrueba.assertThrows(() -> builder.build(), ExcepcionValorObligatorio.class, "El nombre es un campo obligatorio");
 	}
 	
-	@Test
-	public void validarFecha() {
-		ClienteTestDataBuilder builder = new ClienteTestDataBuilder();
-		builder.withFechaNacimiento(null);
-		BasePrueba.assertThrows(() -> builder.build(), ExcepcionValorObligatorio.class, "La fecha de nacimiento es un campo obligatorio");
-	}
+//	@Test
+//	public void validarFecha() {
+//		ClienteTestDataBuilder builder = new ClienteTestDataBuilder();
+//		builder.withFechaNacimiento(null);
+//		BasePrueba.assertThrows(() -> builder.build(), ExcepcionValorObligatorio.class, "La fecha de nacimiento es un campo obligatorio");
+//	}
 	
 	@Test
 	public void validarCorreo() {

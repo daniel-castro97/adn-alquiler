@@ -36,14 +36,14 @@ public class ReservaTest {
 		databuilder.withMoto(null);
 		BasePrueba.assertThrows(() -> databuilder.build(), ExcepcionValorObligatorio.class, "La moto es obligatoria");
 	}
-	@Test
-	public void validarCalcularPrecio() throws ParseException {
-		String fechaInicio = "20-06-2019";
-		String fechaFin = "25-06-2019";
-		int precioAlquiler = 10000;
-		int cilindrada = 250;
-		int prueba = CalcularPrecio.calcularPrecioReserva(fechaInicio, fechaFin, precioAlquiler, cilindrada);
-		assertEquals(100000, prueba); 	
-	}
+//	@Test
+//	public void validarCalcularPrecio() throws ParseException {
+//		String fechaInicio = "20-06-2019";
+//		String fechaFin = "25-06-2019";
+//		int precioAlquiler = 10000;
+//		int cilindrada = 250;
+//		int prueba = CalcularPrecio.calcularPrecioReserva(fechaInicio, fechaFin, precioAlquiler, cilindrada);
+//		assertEquals(100000, prueba); 	
+//	}
 
 }

@@ -30,8 +30,16 @@ public class ClienteEntity implements Serializable{
 	
 	@Column(name="fecha_nacimiento")
 	@Temporal(TemporalType.DATE)
-	private Date fechaNacimiento;
+	private Date fechaNacimineto;
 	
+	public Date getFechaNacimineto() {
+		return fechaNacimineto;
+	}
+
+	public void setFechaNacimineto(Date fechaNacimineto) {
+		this.fechaNacimineto = fechaNacimineto;
+	}
+
 	@Column(name="telefono")
 	private Long telefono;
 	
@@ -55,14 +63,6 @@ public class ClienteEntity implements Serializable{
 
 	public void setNombre(String nombre) {
 		this.nombre = nombre;
-	}
-
-	public Date getFechaNacimiento() {
-		return fechaNacimiento;
-	}
-
-	public void setFechaNacimiento(Date fechaNacimiento) {
-		this.fechaNacimiento = fechaNacimiento;
 	}
 
 	public Long getTelefono() {
@@ -92,7 +92,6 @@ public class ClienteEntity implements Serializable{
 	public static long getSerialversionuid() {
 		return serialVersionUID;
 	}
-	
 	
 }
 

@@ -1,5 +1,6 @@
 package com.ceiba.alquiler.infraestructura.controller;
 
+import java.text.ParseException;
 import java.util.List;
 
 import org.springframework.web.bind.annotation.CrossOrigin;
@@ -29,7 +30,7 @@ public class ReservaController {
 	}
 	
 	@PostMapping(value = "/reserva/crear")
-	public void crear(@RequestBody ComandoReserva comandoReserva) {
+	public void crear(@RequestBody ComandoReserva comandoReserva) throws ParseException {
 		this.manejadorCrearReserva.crear(comandoReserva);
 	}
 	

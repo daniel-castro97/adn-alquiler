@@ -34,5 +34,14 @@ public class ValidarFecha {
 		}
 		return dia;
 	}
+	
+	public  Date siguienteHabil(Date fecha, int dias){
+	      if (dias==0)
+	    	  return fecha;
+	      Calendar calendar = Calendar.getInstance();
+	      calendar.setTime(fecha); 
+	      calendar.add(Calendar.DAY_OF_YEAR, dias);  
+	      return calendar.getTime(); 
+	}
 
 }

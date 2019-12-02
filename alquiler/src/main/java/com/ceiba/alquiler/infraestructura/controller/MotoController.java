@@ -22,7 +22,7 @@ import com.ceiba.alquiler.dominio.entidades.Moto;
  * @author daniel.castro
  *
  */
-//@CrossOrigin(origins = "http://localhost:4200")
+
 @RestController
 @RequestMapping("/service")
 public class MotoController {

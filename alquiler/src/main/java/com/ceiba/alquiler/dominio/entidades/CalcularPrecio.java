@@ -6,18 +6,18 @@ import java.util.Date;
 
 public class CalcularPrecio {
 
-	private  CalcularPrecio() {
+	public  CalcularPrecio() {
 		
 	}
 	
-	public static int calcularPrecioReserva(String fechaInicial, String fechaFinal, int valor, int cilindrada) throws ParseException {
+	public  int calcularPrecioReserva(Date fechaInicial, Date fechaFinal, int valor, int cilindrada) throws ParseException {
 		
-		SimpleDateFormat dateFormat = new SimpleDateFormat("dd-MM-yyyy");
+//		SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
+//		
+//		Date fechaUno= dateFormat.parse(fechaInicial);
+//		Date fechaDos= dateFormat.parse(fechaFinal);
 		
-		Date fechaUno= dateFormat.parse(fechaInicial);
-		Date fechaDos= dateFormat.parse(fechaFinal);
-		
-		int cantidadDias = (int) ((fechaDos.getTime()-fechaUno.getTime())/86400000);
+		int cantidadDias = (int) ((fechaFinal.getTime()-fechaInicial.getTime())/86400000);
 		
 		int valorTotal = valor*cantidadDias;
 		
