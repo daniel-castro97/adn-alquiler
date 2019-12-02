@@ -3,6 +3,8 @@ package com.ceiba.alquiler.dominio.entidades;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 
 import org.junit.jupiter.api.Test;
 
@@ -36,14 +38,28 @@ public class ReservaTest {
 		databuilder.withMoto(null);
 		BasePrueba.assertThrows(() -> databuilder.build(), ExcepcionValorObligatorio.class, "La moto es obligatoria");
 	}
-//	@Test
-//	public void validarCalcularPrecio() throws ParseException {
-//		String fechaInicio = "20-06-2019";
-//		String fechaFin = "25-06-2019";
-//		int precioAlquiler = 10000;
-//		int cilindrada = 250;
-//		int prueba = CalcularPrecio.calcularPrecioReserva(fechaInicio, fechaFin, precioAlquiler, cilindrada);
-//		assertEquals(100000, prueba); 	
-//	}
-
+	@Test
+	public void validarCalcularPrecio() throws ParseException {
+		Date fechaInicio = new SimpleDateFormat("yyyy-MM-dd").parse("2019-06-20");
+		Date fechaFin = new SimpleDateFormat("yyyy-MM-dd").parse("2019-06-25");
+		int precioAlquiler = 10000;
+		int cilindrada = 250;
+		int prueba = CalcularPrecio.calcularPrecioReserva(fechaInicio, fechaFin, precioAlquiler, cilindrada);
+		assertEquals(100000, prueba); 	
+	}
+	@Test
+	public void validarDiaHabil() throws ParseException {
+		Date fechaPrueba = new SimpleDateFormat("yyyy-MM-dd").parse("2019-06-20");
+		int aumentoPrueba = 1;
+		Date fechaEsperada = new SimpleDateFormat("yyyy-MM-dd").parse("2019-06-21");
+		Date fechaResultado = ValidarFecha.siguienteHabil(fechaPrueba, aumentoPrueba);
+		assertEquals(fechaEsperada, fechaResultado); 
+	}
+	@Test
+	public void validarDia() throws ParseException {
+		Date fechaPrueba = new SimpleDateFormat("yyyy-MM-dd").parse("2019-12-03");
+		String diaEsperado = "Martes";
+		String diaResultado = ValidarFecha.determinarDia(fechaPrueba);
+		assertEquals(diaEsperado, diaResultado);
+	}
 }

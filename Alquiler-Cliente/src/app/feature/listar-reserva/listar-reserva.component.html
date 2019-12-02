@@ -1,0 +1,42 @@
+<p>
+  listar-reserva works!
+</p>
+<div class="spacer20"></div>
+<div class="container">
+  <div class="page-header">
+    <div class="row">
+      <div class="col-md-10"><h1>Lista de Reservas</h1></div>
+      <div class="col-md-2">
+        <button id="crearUrgencia" class="btn btn-primary pull-right" routerLink="/urgencia-form">
+         TEXTO
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th scope="col">Id</th>
+        <th scope="col">Fecha de Solicitud</th>
+        <th scope="col">Fecha de Inicio</th>
+        <th scope="col">Fecha de Finalización</th>
+        <th scope="col">Valor de la Reserva</th>
+        <th scope="col">Placa de moto reservada</th>
+        <th scope="col">Cedula del Cliente</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let reserva  of listaReserva">
+        <td>{{ reserva.id }}</td>
+        <td>{{ reserva.fechaSolicitud }}</td>
+        <td>{{ reserva.fechaInicio }}</td>
+        <td>{{ reserva.fechaFin }}</td>
+        <td>{{ reserva.valorTotal }}</td>
+        <td>{{ reserva.moto.placa }}</td>
+        <td>{{ reserva.cliente.cedula }}</td>
+      </tr>
+    </tbody>
+  </table>
+  
+</div>

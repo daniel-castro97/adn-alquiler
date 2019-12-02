@@ -1,0 +1,41 @@
+<p>
+  listar-motos works!
+</p>
+<div class="spacer20"></div>
+<div class="container">
+  <div class="page-header">
+    <div class="row">
+      <div class="col-md-10"><h1>Listado de Motos</h1></div>
+      <div class="col-md-2">
+        <button id="crearUrgencia" class="btn btn-primary pull-right" routerLink="/urgencia-form">
+          Listado de Motos
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th scope="col">Placa</th>
+        <th scope="col">Marca</th>
+        <th scope="col">Modelo</th>
+        <th scope="col">Referencia</th>
+        <th scope="col">Cilindrada</th>
+        <th scope="col">Precio de Alquiler</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let moto  of listaMotos">
+        <td>{{ moto.placa }}</td>
+        <td>{{ moto.marca }}</td>
+        <td>{{ moto.modelo }}</td>
+        <td>{{ moto.referencia }}</td>
+        <td>{{ moto.cilindrada }}</td>
+        <td>{{ moto.precioAlquiler }}</td>
+        
+      </tr>
+    </tbody>
+  </table>
+  
+</div>

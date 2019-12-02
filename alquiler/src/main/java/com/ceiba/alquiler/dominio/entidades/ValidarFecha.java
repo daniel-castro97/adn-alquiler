@@ -6,7 +6,7 @@ import java.util.GregorianCalendar;
 
 public class ValidarFecha {
 	
-	public String determinarDia(Date fechaActual) {
+	public static String determinarDia(Date fechaActual) {
 		String dia = null;
 		GregorianCalendar calendario = new GregorianCalendar();
 		calendario.setTime(fechaActual);
@@ -35,7 +35,7 @@ public class ValidarFecha {
 		return dia;
 	}
 	
-	public  Date siguienteHabil(Date fecha, int dias){
+	public static Date siguienteHabil(Date fecha, int dias){
 	      if (dias==0)
 	    	  return fecha;
 	      Calendar calendar = Calendar.getInstance();

@@ -11,7 +11,7 @@ import com.ceiba.alquiler.dominio.excepcion.ExcepcionValorObligatorio;
 public class ValidadorMoto {
 
 
-	private ValidadorMoto() {}
+	public ValidadorMoto() {}
 	
 	/**
 	 * Funcion para validar que el tamanio de una placa de una moto sea exacta

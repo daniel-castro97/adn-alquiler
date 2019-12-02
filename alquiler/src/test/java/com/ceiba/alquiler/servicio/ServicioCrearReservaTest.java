@@ -1,7 +1,10 @@
 package com.ceiba.alquiler.servicio;
 
+import static org.junit.jupiter.api.Assertions.assertEquals;
+
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.util.Date;
 
 import org.junit.jupiter.api.Test;
 import org.mockito.Mockito;
@@ -30,4 +33,14 @@ public class ServicioCrearReservaTest {
 			}
 		}, ExcepcionFecha.class, "No se aceptan solicitudes los Domingos");
 	}
+//	@Test
+//	public void validarFechaInicio() throws ParseException {
+//		Reserva reserva = new ReservaTestDatabuilder().build();
+//		RepositorioReserva repositorioReserva = Mockito.mock(RepositorioReserva.class);
+//		ServicioCrearReserva crearReserva = new ServicioCrearReserva(repositorioReserva);
+//		reserva.setFechaInicio(new SimpleDateFormat("yyyy-MM-dd").parse("2019-12-01"));
+//		Date fechaEsperada = new SimpleDateFormat("yyyy-MM-dd").parse("2019-12-02");
+//		crearReserva.crear(reserva);
+//		assertEquals(fechaEsperada,reserva.getFechaInicio() );
+//	}
 }
