@@ -60,7 +60,10 @@ public class RepositorioMotoJpa implements RepositorioMoto{
 	}
 	@Override
 	public ComandoMoto buscar(String placa) {
+		System.out.println(String.format("el tamano es :"));
 		List<MotoEntity> motoEntities = motoJpa.findByPlaca(placa);
+		
+		
 		ComandoMoto coomandoMoto = null;
 		if(!motoEntities.isEmpty()) {
 			coomandoMoto = modelMapper.map(motoEntities.get(0), ComandoMoto.class);

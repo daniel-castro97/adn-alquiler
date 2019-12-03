@@ -3,7 +3,6 @@ package com.ceiba.alquiler.infraestructura.controller;
 import java.text.ParseException;
 import java.util.List;
 
-import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -15,7 +14,6 @@ import com.ceiba.alquiler.aplicacion.comando.ComandoReserva;
 import com.ceiba.alquiler.aplicacion.comando.manejador.reserva.ManejadorCrearReserva;
 import com.ceiba.alquiler.aplicacion.comando.manejador.reserva.ManejadorListarReserva;
 
-//@CrossOrigin(origins = "http://localhost:4200")
 @RestController
 @RequestMapping(value="/service")
 public class ReservaController {

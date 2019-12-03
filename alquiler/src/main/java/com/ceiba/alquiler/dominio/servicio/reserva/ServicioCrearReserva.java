@@ -2,37 +2,37 @@ package com.ceiba.alquiler.dominio.servicio.reserva;
 
 import java.text.ParseException;
 
+import com.ceiba.alquiler.aplicacion.comando.ComandoMoto;
 import com.ceiba.alquiler.dominio.entidades.CalcularPrecio;
 import com.ceiba.alquiler.dominio.entidades.Reserva;
 import com.ceiba.alquiler.dominio.entidades.ValidarFecha;
 import com.ceiba.alquiler.dominio.excepcion.ExcepcionFecha;
+import com.ceiba.alquiler.dominio.repositorio.RepositorioMoto;
 import com.ceiba.alquiler.dominio.repositorio.RepositorioReserva;
 
 public class ServicioCrearReserva {
 
 	private RepositorioReserva repositorioReserva;
 	
-	private ValidarFecha validarFecha;
-	
-	private CalcularPrecio calcularPrecio;
+	private RepositorioMoto moto;
 	
 	private int precioTotal;
 	
 	private static final String DIA_NO_DISPONIBLE = "No se aceptan solicitudes los Domingos";
 
-	public ServicioCrearReserva(RepositorioReserva repositorioReserva) {
+	public ServicioCrearReserva(RepositorioReserva repositorioReserva, RepositorioMoto moto) {
 		
 		this.repositorioReserva = repositorioReserva;
-		this.validarFecha = new ValidarFecha();
-		this.calcularPrecio = new CalcularPrecio();
+		this.moto=moto;
 	}
 	
 	public void crear(Reserva reserva) throws ParseException {
 		validarFechaSolicitud(reserva);
 		validarFechaInicio(reserva);
 		precioTotal = precioReserva(reserva);
-		this.repositorioReserva.crear(reserva);
 		reserva.setValorTotal(precioTotal);
+		this.repositorioReserva.crear(reserva);
+		
 	}
 	
 	public void validarFechaSolicitud(Reserva reserva){
@@ -51,11 +51,14 @@ public class ServicioCrearReserva {
 	}
 	
 	public int precioReserva(Reserva reserva) throws ParseException {
+		ComandoMoto aux = moto.buscar(reserva.getMoto().getPlaca());
+		int precioAux = aux.getPrecioAlquiler();
+		int cilindradaAux = aux.getCilindrada();
 		return CalcularPrecio.calcularPrecioReserva(
 				reserva.getFechaInicio(), 
 				reserva.getFechaFin(),
-				reserva.getMoto().getPrecioAlquiler(),
-				reserva.getMoto().getCilindrada());
+				precioAux,
+				cilindradaAux);
 	}
 	
 }

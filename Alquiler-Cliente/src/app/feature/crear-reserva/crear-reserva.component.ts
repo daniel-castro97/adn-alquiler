@@ -16,7 +16,7 @@ export class CrearReservaComponent implements OnInit {
   public fechaSolicitud: Date = null;
   public fechaInicio: Date = null;
   public fechaFin : Date = null;
-  public valorTotal: number=null;
+  // public valorTotal: number=null;
   public moto : String = null;
   public cliente : number = null;
   public myForm : FormGroup;
@@ -31,7 +31,7 @@ export class CrearReservaComponent implements OnInit {
     this.fechaSolicitud = this.route.snapshot.queryParams["fechaSolicitud"];
     this.fechaInicio = this.route.snapshot.queryParams["fechaInicio"];
     this.fechaFin = this.route.snapshot.queryParams["fechaFin"];
-    this.valorTotal = this.route.snapshot.queryParams["valorTotal"];
+    //this.valorTotal = this.route.snapshot.queryParams["valorTotal"];
     this.moto = this.route.snapshot.queryParams["moto"];
     this.cliente = this.route.snapshot.queryParams["cliente"];
 
@@ -39,7 +39,7 @@ export class CrearReservaComponent implements OnInit {
           fechaSolicitud : new FormControl("fechaSolicitud",[Validators.required]),
           fechaInicio : new FormControl("fechaInicio",[Validators.required]),
           fechaFin : new FormControl("fechaFin",[Validators.required]),
-          valorTotal : new FormControl("valorTotal",[Validators.required]),
+          //valorTotal : new FormControl("valorTotal",[Validators.required]),
           moto : new FormControl("moto",[Validators.required]),
           cliente : new FormControl("cliente",[Validators.required])
     });
@@ -47,7 +47,7 @@ export class CrearReservaComponent implements OnInit {
     this.myForm.controls["fechaSolicitud"].setValue("");
     this.myForm.controls["fechaInicio"].setValue("");
     this.myForm.controls["fechaFin"].setValue("");
-    this.myForm.controls["valorTotal"].setValue(0);
+    //this.myForm.controls["valorTotal"].setValue(0);
     this.myForm.controls["moto"].setValue("");
     this.myForm.controls["cliente"].setValue("");
   }
@@ -63,7 +63,7 @@ export class CrearReservaComponent implements OnInit {
       fechaSolicitud: controls["fechaSolicitud"].value,
       fechaInicio: controls["fechaInicio"].value,
       fechaFin: controls["fechaFin"].value,
-      valorTotal: controls["valorTotal"].value,
+      //valorTotal: controls["valorTotal"].value,
       moto: controls["moto"].value,
       cliente: controls["cliente"].value,
     };
@@ -74,7 +74,7 @@ export class CrearReservaComponent implements OnInit {
       "fechaSolicitud": datosReserva.fechaSolicitud,
       "fechaInicio": datosReserva.fechaInicio,
       "fechaFin": datosReserva.fechaFin,
-      "valorTotal": datosReserva.valorTotal,
+      //"valorTotal": datosReserva.valorTotal,
       "moto": {
         "placa":datosReserva.moto,
       },
@@ -89,8 +89,8 @@ export class CrearReservaComponent implements OnInit {
       console.log(result);
       if (result) {
         swal({
-          title: this.translate.instant("alerts.success"),
-          text: this.translate.instant("alerts.stored_urgencia"),
+          title: "Campos correctos",
+          text: "Reserva registrada con exito",
           type: "success",
           showCancelButton: false,
           confirmButtonColor: "#3085d6",
@@ -98,12 +98,12 @@ export class CrearReservaComponent implements OnInit {
           confirmButtonText: this.translate.instant("buttons.ok"),
         }).then(result => {
 
-          this.router.navigate(["/movie-store"]);
+          this.router.navigate(["/home"]);
         });
       } else {
         swal({
-          title: this.translate.instant("alerts.error"),
-          text: this.translate.instant("alerts.cannot_delete_urgencia"),
+          title: "Ups",
+          text: "Se ha presentado un error",
           type: "error",
           showCancelButton: false,
           confirmButtonColor: "#3085d6",
@@ -115,6 +115,17 @@ export class CrearReservaComponent implements OnInit {
       }
     }, err => {
       console.log(err);
+      swal({
+        title: "Ups",
+        text: "Algo salió mal, Por favor revisa los campos",
+        type: "error",
+        showCancelButton: false,
+        confirmButtonColor: "#3085d6",
+        cancelButtonColor: "#d33",
+        confirmButtonText: this.translate.instant("buttons.ok"),
+      }).then(result => {
+        return false;
+      });
     });
 
   }
@@ -130,7 +141,7 @@ export class CrearReservaComponent implements OnInit {
       cancelButtonText: this.translate.instant("buttons.cancel")
     }).then(result => {
       if (result.value) {
-        this.router.navigate(["/movie-store"]);
+        this.router.navigate(["/home"]);
       }
     });
   }

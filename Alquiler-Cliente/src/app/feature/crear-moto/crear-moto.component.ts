@@ -86,8 +86,8 @@ export class CrearMotoComponent implements OnInit {
       console.log(result);
       if (result) {
         swal({
-          title: this.translate.instant("alerts.success"),
-          text: this.translate.instant("alerts.stored_urgencia"),
+          title: "Campos correctos",
+          text: "Moto registrada con exito",
           type: "success",
           showCancelButton: false,
           confirmButtonColor: "#3085d6",
@@ -99,8 +99,8 @@ export class CrearMotoComponent implements OnInit {
         });
       } else {
         swal({
-          title: this.translate.instant("alerts.error"),
-          text: this.translate.instant("alerts.cannot_delete_urgencia"),
+          title: "Ups",
+          text: "Se ha presentado un error",
           type: "error",
           showCancelButton: false,
           confirmButtonColor: "#3085d6",
@@ -111,7 +111,17 @@ export class CrearMotoComponent implements OnInit {
         });
       }
     }, err => {
-      console.log(err);
+      swal({
+        title: "Ups",
+        text: "Algo salió mal, Por favor revisa los campos",
+        type: "error",
+        showCancelButton: false,
+        confirmButtonColor: "#3085d6",
+        cancelButtonColor: "#d33",
+        confirmButtonText: this.translate.instant("buttons.ok"),
+      }).then(result => {
+        return false;
+      });
     });
 
   }
