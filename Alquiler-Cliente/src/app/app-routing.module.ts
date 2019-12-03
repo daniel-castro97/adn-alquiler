@@ -8,7 +8,7 @@ import { ListarReservaComponent } from './feature/listar-reserva/listar-reserva.
 import { HomeComponent } from './feature/home/home.component';
 
 const routes: Routes = [
-  { path: "", component: HomeComponent },
+  { path: "home", component: HomeComponent },
   {
     path: "",
     children: [

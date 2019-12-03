@@ -95,7 +95,7 @@ export class CrearMotoComponent implements OnInit {
           confirmButtonText: this.translate.instant("buttons.ok"),
         }).then(result => {
 
-          this.router.navigate(["/movie-store"]);
+          this.router.navigate(["/home"]);
         });
       } else {
         swal({
@@ -127,7 +127,7 @@ export class CrearMotoComponent implements OnInit {
       cancelButtonText: this.translate.instant("buttons.cancel")
     }).then(result => {
       if (result.value) {
-        this.router.navigate(["/movie-store"]);
+        this.router.navigate(["/home"]);
       }
     });
   }

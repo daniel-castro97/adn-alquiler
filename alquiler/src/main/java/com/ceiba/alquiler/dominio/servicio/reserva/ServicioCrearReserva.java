@@ -36,22 +36,22 @@ public class ServicioCrearReserva {
 	}
 	
 	public void validarFechaSolicitud(Reserva reserva){
-		if(validarFecha.determinarDia(reserva.getFechaSolicitud()).equals("Domingo")){
+		if(ValidarFecha.determinarDia(reserva.getFechaSolicitud()).equals("Domingo")){
 			throw new ExcepcionFecha(DIA_NO_DISPONIBLE);
 		}
 	}
 	
 	public void validarFechaInicio(Reserva reserva) {
-		if(validarFecha.determinarDia(reserva.getFechaSolicitud()).equals("Domingo")) {
-			reserva.setFechaInicio(validarFecha.siguienteHabil(reserva.getFechaInicio(), 1));
+		if(ValidarFecha.determinarDia(reserva.getFechaSolicitud()).equals("Domingo")) {
+			reserva.setFechaInicio(ValidarFecha.siguienteHabil(reserva.getFechaInicio(), 1));
 		}
-		else if(validarFecha.determinarDia(reserva.getFechaSolicitud()).equals("Sabado")) {
-			reserva.setFechaInicio(validarFecha.siguienteHabil(reserva.getFechaInicio(), 2));
+		else if(ValidarFecha.determinarDia(reserva.getFechaSolicitud()).equals("Sabado")) {
+			reserva.setFechaInicio(ValidarFecha.siguienteHabil(reserva.getFechaInicio(), 2));
 		}
 	}
 	
 	public int precioReserva(Reserva reserva) throws ParseException {
-		return calcularPrecio.calcularPrecioReserva(
+		return CalcularPrecio.calcularPrecioReserva(
 				reserva.getFechaInicio(), 
 				reserva.getFechaFin(),
 				reserva.getMoto().getPrecioAlquiler(),
