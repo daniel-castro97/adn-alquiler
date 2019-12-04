@@ -31,7 +31,7 @@ public class ServicioCrearMoto {
 	}
 	
 	private void validarExistencia(Moto moto) {
-		boolean existe = this.repositorioMoto.existe(moto);
+		boolean existe = this.repositorioMoto.existe(moto.getPlaca());
 		if(existe) {
 			throw new ExcepcionValidadorMoto(LA_MOTO_EXISTE);
 		}

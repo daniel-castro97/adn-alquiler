@@ -1,39 +1,37 @@
 package com.ceiba.alquiler.dominio.entidades;
 
-import java.time.LocalDate;
-import java.time.temporal.ChronoUnit;
-import java.util.ArrayList;
-import java.util.Iterator;
-import java.util.List;
-import java.util.stream.Stream;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+import java.util.Date;
 
-public class RangoFechas implements Iterable<LocalDate>{
+public class RangoFechas {
 	
-	private final LocalDate fechaInicio;
-	private final LocalDate fechaFinal;
-	
-	
-
-	public RangoFechas(LocalDate fechaInicio, LocalDate fechaFinal) {
+	public static void main(String[] args) throws ParseException {
 		
-		this.fechaInicio = fechaInicio;
-		this.fechaFinal = fechaFinal;
-	}
-	@Override
-	public Iterator<LocalDate> iterator() {
-		return stream().iterator();
+		Date fecha1 = new SimpleDateFormat("yyyy-MM-dd").parse("2019-11-29");
+		
+		Date fecha2 = new SimpleDateFormat("yyyy-MM-dd").parse("2019-12-10");
+		determinarDomingosEnRango(fecha1, fecha2);
 	}
 	
-	public Stream<LocalDate> stream() {
-	    return Stream.iterate(fechaInicio, d -> d.plusDays(1))
-	                 .limit(ChronoUnit.DAYS.between(fechaInicio, fechaFinal) + 1);
-	  }
-	public List<LocalDate> toList() { //could also be built from the stream() method
-	    List<LocalDate> dates = new ArrayList<> ();
-	    for (LocalDate d = fechaInicio; !d.isAfter(fechaFinal); d = d.plusDays(1)) {
-	      dates.add(d);
-	    }
-	    return dates;
-	  }
+	public static void determinarDomingosEnRango(Date fechaInicial, Date fechaFinal) {
+		int contador =0;
+		Calendar auxInicio = Calendar.getInstance();
+		auxInicio.setTime(fechaInicial);
+		Calendar auxFinal = Calendar.getInstance();
+		auxFinal.setTime(fechaFinal);
+		
+		for(Calendar aux = auxInicio; aux.before(auxFinal); aux.add(Calendar.DAY_OF_MONTH, 1)) {
+			if(aux.get(Calendar.DAY_OF_WEEK)==1) {
+				contador++;
+			}
+		}
+		System.out.println(contador);
+	}
+	
+	
+
+
 
 }

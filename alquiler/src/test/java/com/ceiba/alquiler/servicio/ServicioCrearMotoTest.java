@@ -16,7 +16,7 @@ public class ServicioCrearMotoTest {
 	public void validarExistencia() {
 		Moto moto = new MotoTestDataBuilder().build();
 		RepositorioMoto repositorioMoto= Mockito.mock(RepositorioMoto.class);
-		Mockito.when(repositorioMoto.existe(moto)).thenReturn(true);
+		Mockito.when(repositorioMoto.existe(moto.getPlaca())).thenReturn(true);
 		
 		ServicioCrearMoto servicioCrearMoto = new ServicioCrearMoto(repositorioMoto);
 		BasePrueba.assertThrows(() -> servicioCrearMoto.crear(moto), ExcepcionValidadorMoto.class, "La moto ya se encuentra registrada");

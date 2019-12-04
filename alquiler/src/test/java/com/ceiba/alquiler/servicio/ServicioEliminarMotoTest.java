@@ -18,7 +18,7 @@ public class ServicioEliminarMotoTest {
 		RepositorioMoto repositorioMoto = Mockito.mock(RepositorioMoto.class);
 		Mockito.when(repositorioMoto.existe(Mockito.any())).thenReturn(false);
 		ServicioEliminarMoto servicioEliminarMoto = new ServicioEliminarMoto(repositorioMoto);
-		BasePrueba.assertThrows(() -> servicioEliminarMoto.eliminar(moto), ExcepcionValidadorMoto.class, "La moto no existe");
+		BasePrueba.assertThrows(() -> servicioEliminarMoto.eliminar(moto.getPlaca()), ExcepcionValidadorMoto.class, "La moto no existe");
 	}
 
 }

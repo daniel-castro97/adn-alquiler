@@ -1,6 +1,7 @@
 package com.ceiba.alquiler.aplicacion.comando.manejador.moto;
 
 import org.springframework.stereotype.Component;
+import org.springframework.transaction.annotation.Transactional;
 
 import com.ceiba.alquiler.dominio.entidades.Moto;
 import com.ceiba.alquiler.dominio.servicio.moto.ServicioEliminarMoto;
@@ -14,8 +15,8 @@ public class ManejadorEliminarMoto {
 		
 		this.servicioEliminarMoto = servicioEliminarMoto;
 	}
-	 
-	public void eliminar(Moto moto) {
+	@Transactional
+	public void eliminar(String moto) {
 		this.servicioEliminarMoto.eliminar(moto);
 	}
 	

@@ -22,6 +22,7 @@ import { ListarMotosComponent } from './feature/listar-motos/listar-motos.compon
 import { CrearReservaComponent } from './feature/crear-reserva/crear-reserva.component';
 import { ListarReservaComponent } from './feature/listar-reserva/listar-reserva.component';
 import { HomeComponent } from './feature/home/home.component';
+import { ActualizarMotoComponent } from './feature/actualizar-moto/actualizar-moto.component';
 defineLocale("es", esLocale);
 registerLocaleData(es);
 
@@ -33,7 +34,8 @@ registerLocaleData(es);
     ListarMotosComponent,
     CrearReservaComponent,
     ListarReservaComponent,
-    HomeComponent
+    HomeComponent,
+    ActualizarMotoComponent
   ],
   imports: [
     BrowserModule,

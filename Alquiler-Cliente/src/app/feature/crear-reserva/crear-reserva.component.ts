@@ -16,7 +16,6 @@ export class CrearReservaComponent implements OnInit {
   public fechaSolicitud: Date = null;
   public fechaInicio: Date = null;
   public fechaFin : Date = null;
-  // public valorTotal: number=null;
   public moto : String = null;
   public cliente : number = null;
   public myForm : FormGroup;
@@ -31,7 +30,6 @@ export class CrearReservaComponent implements OnInit {
     this.fechaSolicitud = this.route.snapshot.queryParams["fechaSolicitud"];
     this.fechaInicio = this.route.snapshot.queryParams["fechaInicio"];
     this.fechaFin = this.route.snapshot.queryParams["fechaFin"];
-    //this.valorTotal = this.route.snapshot.queryParams["valorTotal"];
     this.moto = this.route.snapshot.queryParams["moto"];
     this.cliente = this.route.snapshot.queryParams["cliente"];
 
@@ -39,7 +37,6 @@ export class CrearReservaComponent implements OnInit {
           fechaSolicitud : new FormControl("fechaSolicitud",[Validators.required]),
           fechaInicio : new FormControl("fechaInicio",[Validators.required]),
           fechaFin : new FormControl("fechaFin",[Validators.required]),
-          //valorTotal : new FormControl("valorTotal",[Validators.required]),
           moto : new FormControl("moto",[Validators.required]),
           cliente : new FormControl("cliente",[Validators.required])
     });
@@ -47,7 +44,6 @@ export class CrearReservaComponent implements OnInit {
     this.myForm.controls["fechaSolicitud"].setValue("");
     this.myForm.controls["fechaInicio"].setValue("");
     this.myForm.controls["fechaFin"].setValue("");
-    //this.myForm.controls["valorTotal"].setValue(0);
     this.myForm.controls["moto"].setValue("");
     this.myForm.controls["cliente"].setValue("");
   }
@@ -63,7 +59,6 @@ export class CrearReservaComponent implements OnInit {
       fechaSolicitud: controls["fechaSolicitud"].value,
       fechaInicio: controls["fechaInicio"].value,
       fechaFin: controls["fechaFin"].value,
-      //valorTotal: controls["valorTotal"].value,
       moto: controls["moto"].value,
       cliente: controls["cliente"].value,
     };
@@ -74,7 +69,6 @@ export class CrearReservaComponent implements OnInit {
       "fechaSolicitud": datosReserva.fechaSolicitud,
       "fechaInicio": datosReserva.fechaInicio,
       "fechaFin": datosReserva.fechaFin,
-      //"valorTotal": datosReserva.valorTotal,
       "moto": {
         "placa":datosReserva.moto,
       },

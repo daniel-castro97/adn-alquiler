@@ -18,12 +18,12 @@ public class ServicioEliminarMoto {
 
 
 
-	public void eliminar(Moto moto) {
+	public void eliminar(String moto) {
 		existeMoto(moto);
 		this.repositorioMoto.eliminar(moto);
 	}
 	
-	public void existeMoto(Moto moto) {
+	public void existeMoto(String moto) {
 		boolean existe = repositorioMoto.existe(moto);
 		if(!existe) {
 			throw new ExcepcionValidadorMoto(MOTO_NO_EXISTE);

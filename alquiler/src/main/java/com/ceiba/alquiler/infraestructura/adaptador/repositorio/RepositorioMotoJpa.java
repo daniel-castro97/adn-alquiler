@@ -37,16 +37,15 @@ public class RepositorioMotoJpa implements RepositorioMoto{
 	}
 
 	@Override
-	public boolean existe(Moto moto) {
+	public boolean existe(String moto) {
 		List<MotoEntity> aux;
-		MotoEntity motoEntity = modelMapper.map(moto, MotoEntity.class);
-		aux = motoJpa.findByPlaca(motoEntity.getPlaca());
+		aux = motoJpa.findByPlaca(moto);
 		return !aux.isEmpty();
 	}
 
 	@Override
-	public void eliminar(Moto moto) {
-		motoJpa.deleteByPlaca(moto.getPlaca());
+	public void eliminar(String moto) {
+		motoJpa.deleteByPlaca(moto);
 		
 	}
 	@Override
@@ -60,10 +59,7 @@ public class RepositorioMotoJpa implements RepositorioMoto{
 	}
 	@Override
 	public ComandoMoto buscar(String placa) {
-		System.out.println(String.format("el tamano es :"));
 		List<MotoEntity> motoEntities = motoJpa.findByPlaca(placa);
-		
-		
 		ComandoMoto coomandoMoto = null;
 		if(!motoEntities.isEmpty()) {
 			coomandoMoto = modelMapper.map(motoEntities.get(0), ComandoMoto.class);

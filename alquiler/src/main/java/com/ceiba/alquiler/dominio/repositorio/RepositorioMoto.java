@@ -21,12 +21,12 @@ public interface RepositorioMoto {
 	 * @param moto
 	 * @return
 	 */
-	boolean existe(Moto moto);
+	boolean existe(String moto);
 	/**
 	 * 
 	 * @param placa
 	 */
-	void eliminar(Moto moto);
+	void eliminar(String moto);
 	
 	
 	/**

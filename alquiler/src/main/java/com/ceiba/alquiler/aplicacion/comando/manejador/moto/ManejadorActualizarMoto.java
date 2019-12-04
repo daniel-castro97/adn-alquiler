@@ -2,6 +2,7 @@ package com.ceiba.alquiler.aplicacion.comando.manejador.moto;
 
 import org.springframework.stereotype.Component;
 
+import com.ceiba.alquiler.aplicacion.comando.ComandoMoto;
 import com.ceiba.alquiler.aplicacion.comando.fabrica.FabricaMoto;
 import com.ceiba.alquiler.dominio.entidades.Moto;
 import com.ceiba.alquiler.dominio.servicio.moto.ServicioActualizarMoto;
@@ -18,7 +19,8 @@ public class ManejadorActualizarMoto {
 		this.fabricaMoto = fabricaMoto;
 	}
 	
-	public void actualizar (Moto moto) {
+	public void actualizar (ComandoMoto comandoMoto) {
+		Moto moto = fabricaMoto.crearMoto(comandoMoto);
 		this.actualizarMoto.actualizar(moto);
 	}
 }

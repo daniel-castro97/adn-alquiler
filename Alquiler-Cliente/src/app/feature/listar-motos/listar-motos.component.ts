@@ -43,4 +43,57 @@ export class ListarMotosComponent implements OnInit {
       }
     );
   }
+  confirmDelete(moto) {
+    swal({
+      title: "Confirmación",
+      text: "¿Esta seguro que desea eliminar el registro?",
+      type: "warning",
+      showCancelButton: true,
+      confirmButtonColor: "#3085d6",
+      cancelButtonColor: "#d33",
+      confirmButtonText: this.translate.instant("buttons.yes"),
+      cancelButtonText: this.translate.instant("buttons.cancel")
+    }).then(result => {
+      if (result.value) {
+        this.eliminarMoto(moto);
+      }
+    });
+  }
+  eliminarMoto(moto){
+    let url = `/api/service/moto/eliminar/${moto}`;
+    this.service.queryDeleteRegular(url).subscribe(
+      response => {
+        let result = response;
+        if (result) {
+          this.getMotos();
+          swal({
+            title: "Exito",
+            text: "Registro eliminado con exito",
+            type: "success",
+            showCancelButton: false,
+            confirmButtonColor: "#3085d6",
+            cancelButtonColor: "#d33",
+            confirmButtonText: this.translate.instant("buttons.ok"),
+          }).then(result => {
+            return false;
+          });
+        } else {
+          swal({
+            title: "Ups",
+            text: "se ha presentado un error",
+            type: "error",
+            showCancelButton: false,
+            confirmButtonColor: "#3085d6",
+            cancelButtonColor: "#d33",
+            confirmButtonText: this.translate.instant("buttons.ok"),
+          }).then(result => {
+            return false;
+          });
+        }
+      },
+      err => {
+        console.log(err);
+      }
+    );
+  }
 }
