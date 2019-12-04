@@ -96,4 +96,7 @@ export class ListarMotosComponent implements OnInit {
       }
     );
   }
+  actualizar(){
+    this.router.navigate(["/actualizar"]);
+  }
 }

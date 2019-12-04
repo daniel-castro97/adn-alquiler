@@ -6,6 +6,7 @@ import { ListarMotosComponent } from './feature/listar-motos/listar-motos.compon
 import { CrearReservaComponent } from './feature/crear-reserva/crear-reserva.component';
 import { ListarReservaComponent } from './feature/listar-reserva/listar-reserva.component';
 import { HomeComponent } from './feature/home/home.component';
+import { ActualizarMotoComponent } from './feature/actualizar-moto/actualizar-moto.component';
 
 const routes: Routes = [
   { path: "home", component: HomeComponent },
@@ -16,7 +17,8 @@ const routes: Routes = [
       {path: "moto", component :CrearMotoComponent},
       {path: "listar-motos", component : ListarMotosComponent},
       {path: "reserva", component: CrearReservaComponent},
-      {path: "listar-reservas", component: ListarReservaComponent}
+      {path: "listar-reservas", component: ListarReservaComponent},
+      {path: "actualizar", component: ActualizarMotoComponent}
     ]
   }
 ];

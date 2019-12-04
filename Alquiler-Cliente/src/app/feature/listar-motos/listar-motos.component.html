@@ -29,6 +29,9 @@
         <td>{{ moto.cilindrada }}</td>
         <td>{{ moto.precioAlquiler }}</td>
         <td>
+          <button class="btn btn-primary" id="btnActualizar" (click)="actualizar()" >Actualizar</button>
+        </td>
+        <td>
           <button class="btn btn-danger" id="btnEliminar" (click)="confirmDelete(moto.placa)" >Eliminar</button>
         </td>
       </tr>

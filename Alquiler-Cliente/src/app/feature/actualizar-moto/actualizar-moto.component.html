@@ -1,3 +1,59 @@
 <p>
   actualizar-moto works!
 </p>
+<div class="create-container">
+  <h1>Registrar Moto</h1>
+    <div class="form">
+      <form [formGroup]="myForm">
+        <div class="form-group">
+          <label>Placa (Recuerde la placa original)</label>
+          <input id="placa" type="text" class="form-control" formControlName="placa" />
+          <span *ngIf="controlHasError('placa', 'required')">
+            <strong>{{ "validation.required_field" | translate }}</strong>
+          </span>
+        </div>
+        <div class="form-group">
+          <label>Marca</label>
+          <input id="marca" type="text" class="form-control" formControlName="marca" />
+          <span *ngIf="controlHasError('marca', 'required')">
+            <strong>{{ "validation.required_field" | translate }}</strong>
+          </span>
+        </div>
+        <div class="form-group">
+          <label>Modelo</label>
+          <input id="modelo" type="text" class="form-control" formControlName="modelo" />
+          <span *ngIf="controlHasError('modelo', 'required')">
+            <strong>{{ "validation.required_field" | translate }}</strong>
+          </span>
+        </div>
+        <div class="form-group">
+          <label>Referencia</label>
+          <input id="referencia" type="text" class="form-control" formControlName="referencia" />
+          <span *ngIf="controlHasError('referencia', 'required')">
+            <strong>{{ "validation.required_field" | translate }}</strong>
+          </span>
+        </div>
+        <div class="form-group">
+          <label>Cilindrada</label>
+          <input id="cilindrada" type="text" class="form-control" formControlName="cilindrada" />
+          <span *ngIf="controlHasError('cilindrada', 'required')">
+            <strong>{{ "validation.required_field" | translate }}</strong>
+          </span>
+        </div>
+        <div class="form-group">
+          <label>Precio</label>
+          <input id="precioAlquiler" type="text" class="form-control" formControlName="precioAlquiler" />
+          <span *ngIf="controlHasError('precioAlquiler', 'required')">
+            <strong>{{ "validation.required_field" | translate }}</strong>
+          </span>
+        </div>
+        <button id="botonCrearMoto" class="btn btn-primary" (click)="store()">
+          Actualizar
+        </button>
+        <p> </p>
+        <button id="botonVolver" class="btn btn-primary" (click)="confirmVolver()">
+            {{ "forms.return" | translate }}
+        </button>
+      </form>
+    </div>
+</div>

@@ -40,8 +40,8 @@ public class ReservaTest {
 	}
 	@Test
 	public void validarCalcularPrecio() throws ParseException {
-		Date fechaInicio = new SimpleDateFormat("yyyy-MM-dd").parse("2019-06-20");
-		Date fechaFin = new SimpleDateFormat("yyyy-MM-dd").parse("2019-06-25");
+		Date fechaInicio = new SimpleDateFormat("yyyy-MM-dd").parse("2019-12-02");
+		Date fechaFin = new SimpleDateFormat("yyyy-MM-dd").parse("2019-12-06");
 		int precioAlquiler = 10000;
 		int cilindrada = 250;
 		int prueba = CalcularPrecio.calcularPrecioReserva(fechaInicio, fechaFin, precioAlquiler, cilindrada);
